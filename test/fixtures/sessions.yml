@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  author: MyString
+  notes: MyText
+  reps: 1
+  sets: 1
+  workout: one
+
+two:
+  author: MyString
+  notes: MyText
+  reps: 1
+  sets: 1
+  workout: two

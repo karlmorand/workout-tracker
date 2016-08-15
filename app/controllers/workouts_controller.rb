@@ -10,9 +10,9 @@ class WorkoutsController < ApplicationController
   def create
     @workout = Workout.new(workout_params)
     if @workout.save
-      redirect_to 'workouts_url'
+      redirect_to workouts_path
     else
-      redirect_to 'new_workout_url'
+      redirect_to new_workout_path
     end
   end
 
