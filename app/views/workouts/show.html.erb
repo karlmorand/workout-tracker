@@ -1,0 +1,11 @@
+<h2><%= @workout.title %></h2>
+<p>
+  Description:
+</p>
+<p>
+  <%= @workout.description %>
+</p>
+<%= link_to "Edit #{@workout.title}", edit_workout_path(@workout) %>
+<%= link_to "Delete Workout", workout_path(@workout), method: :delete, data: {confirm: 'Confirm you want to delete this workout'} %>
+
+<%= link_to "Back to all workouts", workouts_path %><br />

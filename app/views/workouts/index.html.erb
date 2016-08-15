@@ -8,7 +8,7 @@
     <h1>Workouts</h1>
     <% @workouts.each do |workout| %>
       <ul>
-        <li><%= workout.title %></li>
+        <li><%= link_to workout.title, workout %></li>
         <li><%= workout.description %></li>
       </ul>
     <% end %>
