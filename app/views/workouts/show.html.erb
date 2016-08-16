@@ -1,4 +1,7 @@
 <h2><%= @workout.title %></h2>
+<p>
+  <%= @workout.description %>
+</p>
 
 <table class="u-full-width">
   <thead>
@@ -42,10 +45,10 @@
 
 </div>
 <div class="button">
-  <%= link_to "Delete Workout", workout_path(@workout), method: :delete, data:{confirm: 'Confirm you want to delete this workout'} %>
+  <%= link_to "Delete #{@workout.title}", workout_path(@workout), method: :delete, data:{confirm: 'Confirm you want to delete this workout'} %>
 
 </div>
 <div class="button">
-  <%= link_to "Back to all workouts", workouts_path %><br />
+  <%= link_to "Back to all lifts", workouts_path %><br />
 
 </div>

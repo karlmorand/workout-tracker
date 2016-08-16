@@ -5,10 +5,10 @@
     <title>Lifts</title>
   </head>
   <body>
-    <h1>Workouts</h1>
+    <h1>Lifts</h1>
     <% @workouts.each do |workout| %>
         <h3><%= link_to workout.title, workout %></h3>
     <% end %>
-    <%= link_to "Add a new workout",  new_workout_url %>
+    <%= link_to "Add a new lift",  new_workout_url %>
   </body>
 </html>

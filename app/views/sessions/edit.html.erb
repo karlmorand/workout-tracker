@@ -2,8 +2,16 @@
 
 <%= form_for @session do |f| %>
   <div>
-    <%= f.label :author %>
-    <%= f.text_field :author %>
+    <%= f.label :sets %>
+    <%= f.text_field :sets %>
+  </div>
+  <div>
+    <%= f.label :reps %>
+    <%= f.text_field :reps %>
+  </div>
+  <div>
+    <%= f.label :weight %>
+    <%= f.text_field :weight %>
   </div>
   <div>
     <%= f.label :notes %>
