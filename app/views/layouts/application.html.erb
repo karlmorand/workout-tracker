@@ -9,6 +9,18 @@
   </head>
 
   <body>
+    <h1>Workouts</h1>
+    <nav>
+      <% if session[:user] %>
+      <a href="/sign_out"><%= session[:user]["username"] %>: sign out</a></h2>
+      <a href="/workouts">Workouts</a>
+      <% else %>
+      <a href="/sign_in">Sign in</a>
+      <a href="/sign_up">Sign up</a>
+      <% end %>
+    </nav>
+    <br>
+    <%= flash[:notice] %>
     <%= yield %>
   </body>
 </html>
