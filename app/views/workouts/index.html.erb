@@ -2,15 +2,12 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Workouts</title>
+    <title>Lifts</title>
   </head>
   <body>
     <h1>Workouts</h1>
     <% @workouts.each do |workout| %>
-      <ul>
-        <li><%= link_to workout.title, workout %></li>
-        <li><%= workout.description %></li>
-      </ul>
+        <h3><%= link_to workout.title, workout %></h3>
     <% end %>
     <%= link_to "Add a new workout",  new_workout_url %>
   </body>

@@ -37,7 +37,7 @@ class UsersController < ApplicationController
     elsif !BCrypt::Password.new(@user.password_digest).is_password?(params[:password])
       message = "Wrong password"
     else
-      message = "You're signed in, #{@user.username}"
+      # message = "You're signed in, #{@user.username}"
       cookies[:username] = {
         value: @user.username,
         expires: 100.years.from_now
