@@ -1,0 +1,13 @@
+<h1>Edit Session</h1>
+
+<%= form_for @session do |f| %>
+  <div>
+    <%= f.label :author %>
+    <%= f.text_field :author %>
+  </div>
+  <div>
+    <%= f.label :notes %>
+    <%= f.text_area :notes %>
+  </div>
+  <%= f.submit "Submit Session Edits" %>
+<% end %>

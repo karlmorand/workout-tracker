@@ -8,7 +8,7 @@
 
 <% @workout.sessions.each do |session| %>
   <%= session.notes %>
-  <%= session.created_at %>
+  <%= link_to session.created_at, session %>
 <% end %>
 <%= link_to "New Session", new_session_path(:workout_id => @workout.id) %>
 

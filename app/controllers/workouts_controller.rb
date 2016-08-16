@@ -1,6 +1,6 @@
 class WorkoutsController < ApplicationController
   def index
-    @workouts = Workout.all
+    @workouts = User.find(session[:user]["id"]).workouts
   end
 
   def new
@@ -8,12 +8,9 @@ class WorkoutsController < ApplicationController
   end
 
   def create
-    @workout = Workout.new(workout_params)
-    if @workout.save
-      redirect_to workouts_path
-    else
-      redirect_to new_workout_path
-    end
+    @user = User.find(session[:user]["id"])
+    @workout = @user.workouts.create!(workout_params)
+    redirect_to workouts_path
   end
 
   def show
