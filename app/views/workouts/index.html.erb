@@ -7,7 +7,7 @@
   <body>
     <h1>Workouts</h1>
     <% @workouts.each do |workout| %>
-        <h2><%= link_to workout.title, workout %></h2>
+        <h3><%= link_to workout.title, workout %></h3>
     <% end %>
     <%= link_to "Add a new workout",  new_workout_url %>
   </body>

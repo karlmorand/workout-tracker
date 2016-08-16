@@ -1,6 +1,8 @@
-<h2><%= @session.created_at %></h2>
+<h2><%= @session.workout.title %></h2>
+<h3><%= @session.created_at.to_formatted_s(:short)%></h3>
 <p>
   <%= @session.notes %>
 </p>
 <%= link_to "Edit this session", edit_session_path(@session) %>
 <%= link_to "Delete Session", session_path(@session), method: :delete, data: {confirm: 'Confirm you want to delete this sesssion'} %>
+<%= link_to "Back to workouts", workouts_path %>
