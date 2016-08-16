@@ -13,12 +13,18 @@ class UsersController < ApplicationController
     if params[:password_confirmation] != params[:password]
       message = "Your passwords don't match"
     elsif user.save
-      message = "Your account has been created!"
+      cookies[:username] = {
+        value: user.username,
+        expires: 100.years.from_now
+      }
+      session[:user] = user
+    redirect_to workouts_path
     else
       message = "Your account couldn't be created"
+      redirect_to action: :sign_up
     end
     flash[:notice] = message
-    redirect_to action: :sign_up
+
   end
 
   def sign_in
@@ -32,7 +38,7 @@ class UsersController < ApplicationController
       message = "Wrong password"
     else
       message = "You're signed in, #{@user.username}"
-      cookes[:username] = {
+      cookies[:username] = {
         value: @user.username,
         expires: 100.years.from_now
       }

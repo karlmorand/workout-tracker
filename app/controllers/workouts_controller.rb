@@ -10,6 +10,7 @@ class WorkoutsController < ApplicationController
   def create
     @user = User.find(session[:user]["id"])
     @workout = @user.workouts.create!(workout_params)
+    redirect_to workouts_path
   end
 
   def show
